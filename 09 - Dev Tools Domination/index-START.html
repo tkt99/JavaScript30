@@ -18,29 +18,74 @@
     }
 
     // Regular
+    console.log('hello');
 
     // Interpolated
+    console.log('Hello I am a %s string!', 'asdf');
 
     // Styled
+    // console.log('%c I am some great text', 'font-size: 50px; background: red')
 
     // warning!
+    console.warn('oopsies');
 
     // Error :|
+    console.error('ah shieeeee');
 
     // Info
+    console.info('here');
 
     // Testing
+    console.assert(1 === 1, 'that is wront!');
+    console.assert(2 === 1, 'that is wront!');
+
+    const p = document.querySelector('p');
+    console.assert(p.classList.contains("ouch"), 'no ouch in here');
 
     // clearing
+    console.clear();
 
     // Viewing DOM Elements
+    console.log(p);
+    console.dir(p); // all things in the element
 
     // Grouping together
+    dogs.forEach(dog=> {
+      console.groupCollapsed(`${dog.name}`);
+      console.log(`${dog.name} is ${dog.age} years old (dog years: ${dog.age * 7})`);
+      console.groupEnd(`${dog.name}`);
+    });
+
 
     // counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Wes');
+    
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/webbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
 
+      });
+
+      console.table(dogs);
   </script>
 </body>
 </html>
